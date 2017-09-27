@@ -1,3 +1,4 @@
 import pytest
+from selenium import webdriver
 
-def test_can_open_close_widget(app)
+    @pytest
