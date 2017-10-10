@@ -1,11 +1,10 @@
 import pytest
+from fixture.application import Application
 
+def test_single_page_open_by_refresh(app):
+    app.widget.open_widget()
+    app.refresh()
 
-@pytest.fixture
-def selenium(selenium):
-    selenium.implicity_wait(10)
-    selenium.maximize_window()
-    return selenium
-
-def test_example(selenium):
-    selenium.get('http://www.example.com')
+def test_single_page_open_by_avatar(app):
+    app.open_home_page()
+    app.first_avatar_opening()
