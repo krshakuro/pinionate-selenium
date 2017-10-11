@@ -7,7 +7,6 @@ def test_expand(app):
     app.widget.expand_by_btn()
 
 def test_link_button(app):
-    app.widget.open_widget()
     app.open_link_page()
     app.widget.click_link_button()
 

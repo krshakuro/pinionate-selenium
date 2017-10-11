@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC, wait
 from selenium.webdriver.support.wait import WebDriverWait
 
 
@@ -30,11 +30,24 @@ class Widget:
         wd = self.app.wd
         wd.find_element_by_css_selector(".pinion-cancel-fullscreen-btn").click()
 
-    def like_by_btn(self):
+    # def like_by_btn(self):
+    #     wd = self.app.wd
+    #     # like_btn = wd.find_element_by_css_selector(".pinion-like-btn")
+    #     # image = wd.find_element_by_css_selector(".pinion-crop-center")
+    #     wait = WebDriverWait(wd, 30)
+    #     wait.until(lambda  wd: wd.find_element(By.CLASS_NAME,"pinion-like-btn")
+    #                            and wd.find_element(By.CLASS_NAME, "pinion-crop-center"))
+    #     wd.find_element_by_css_selector(".pinion-like-btn").click()
+
+     def like_by_btn(self):
         wd = self.app.wd
-        like_btn = WebDriverWait(wd, 20).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, ".pinion-like-btn")))
-        like_btn.click()
+        # like_btn = wd.find_element_by_css_selector(".pinion-like-btn")
+        # image = wd.find_element_by_css_selector(".pinion-crop-center")
+        wait = WebDriverWait(wd, 30)
+        wait.until(lambda  wd: wd.find_element(By.CLASS_NAME,"pinion-like-btn")
+                               and wd.find_element(By.CLASS_NAME, "pinion-crop-center"))
+        wd.find_element_by_css_selector(".pinion-like-btn").click()
+
 
     def dislike_by_btn(self):
         wd = self.app.wd
