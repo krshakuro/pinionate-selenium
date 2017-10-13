@@ -8,7 +8,7 @@ class Application:
 
     def __init__(self):
         self.wd = WebDriver()
-        self.wd.implicitly_wait(60)
+        self.wd.implicitly_wait(5)
         self.widget = Widget(self)
 
     def is_valid(self):
@@ -24,11 +24,11 @@ class Application:
 
     def open_link_page(self):
         wd = self.wd
-        wd.get("http://pinion.shakuro.net/")
+        wd.get("http://pinionate.com/channel/440/Best-Dog-Breeds")
 
     def open_buy_page(self):
         wd = self.wd
-        wd.get("http://pinion.shakuro.net/")
+        wd.get("http://pinion.shakuro.net/channel/478/Teen-Girl-Halloween-Costume-Ideas")
 
     def open_info_page(self):
         wd = self.wd
