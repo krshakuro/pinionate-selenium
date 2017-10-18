@@ -39,7 +39,6 @@ class Widget:
         time.sleep(2)
         wd.find_element_by_css_selector(".pinion-like-btn").click()
 
-
     def dislike_by_btn(self):
         wd = self.app.wd
         time.sleep(2)
@@ -74,6 +73,7 @@ class Widget:
         wd = self.app.wd
         time.sleep(1)
         wd.find_element_by_css_selector(".pinion-collection-item-question").click()
+        time.sleep(1)
 
     def open_positive_review(self):
         wd = self.app.wd
@@ -110,12 +110,15 @@ class Widget:
         wd.execute_script('document.querySelector(".pinion-description-toggle-btn").click()')
         time.sleep(2)
 
-
     def negative_votes_count(self):
         wd = self.app.wd
         time.sleep(1)
         return len(wd.find_elements_by_css_selector(".pinion-collection-item-vote-negative"))
 
+    def skipped_votes_count(self):
+        wd = self.app.wd
+        time.sleep(1)
+        return len(wd.find_elements_by_css_selector(".pinion-collection-item-vote-skip"))
 
     def positive_votes_count(self):
         wd = self.app.wd
@@ -155,8 +158,23 @@ class Widget:
         # actions.key_down(el)
         # actions.perform()
 
-
     def is_description_presented(self):
         wd = self.app.wd
         el = wd.find_element_by_css_selector(".pinion-show-info")
         assert el.is_displayed
+
+    def is_counter_presented(self):
+        wd = self.app.wd
+        el = wd.find_element_by_css_selector(".pinion-collection-item-counter")
+        assert el.is_displayed
+
+    def is_back_button_presented(self):
+        wd = self.app.wd
+        el = wd.find_element_by_css_selector(".pinion-collection-item-description")
+        assert el.is_displayed
+
+    def is_review_button_presented(self):
+        wd = self.app.wd
+        el = wd.find_element_by_css_selector(".pinion-collection-item-active")
+        assert el.is_displayed
+

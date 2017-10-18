@@ -9,13 +9,11 @@ def test_expand(app):
     app.widget.init_widget()
     app.widget.expand_by_btn()
 
-
 def test_link_button(app):
     app.open_link_page()
     app.widget.init_widget()
     app.widget.skip_intro()
     app.widget.click_link_button()
-
 
 def test_buy_button(app):
     app.open_buy_page()
