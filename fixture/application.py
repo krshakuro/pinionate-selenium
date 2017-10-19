@@ -1,15 +1,20 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 from pages.widget import Widget
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 __author__ = 'kirill'
 
 class Application:
 
     def __init__(self):
-        self.wd = WebDriver()
-        self.wd.implicitly_wait(5)
+
         self.widget = Widget(self)
+        chrome_options = Options()
+        chrome_options.add_argument("--start-maximized")
+        self.wd = webdriver.Chrome(chrome_options=chrome_options)
+        self.wd.implicitly_wait(5)
 
     def is_valid(self):
         try:

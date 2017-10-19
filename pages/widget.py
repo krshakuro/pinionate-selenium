@@ -178,3 +178,10 @@ class Widget:
         el = wd.find_element_by_css_selector(".pinion-collection-item-active")
         assert el.is_displayed
 
+    def is_recommended_channels_block_presented(self):
+        wd = self.app.wd
+        title = wd.find_element_by_css_selector(".channel-view__sidebar-title")
+        assert title.is_displayed
+        block = wd.find_element_by_css_selector(".channel-list")
+        assert block.is_displayed
+
